@@ -1,9 +1,10 @@
 // /api/edge.js
-export const config = {
+export const config = { 
     runtime: 'edge',
   };
   
   export default async function handler(req) {
+    console.log('--- DEBUG: Edge Function 被调用 ---', new Date().toISOString());
     // 1. 处理 CORS 预检请求
     if (req.method === 'OPTIONS') {
       return new Response(null, {
