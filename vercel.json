@@ -1,14 +1,5 @@
 {
-  "rewrites": [
-    {
-      "source": "/api/v1beta/:path*",
-      "destination": "/api/edge"
-    }
-  ],
   "functions": {
-    "api/edge": {
-      "runtime": "edge"
-    },
     "src/app/api/**/*.ts": {
       "maxDuration": 300
     }
