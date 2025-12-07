@@ -1,11 +1,16 @@
 {
+  "rewrites": [
+    {
+      "source": "/api/v1beta/:path*",
+      "destination": "/api/edge"
+    }
+  ],
   "functions": {
+    "api/edge": {
+      "runtime": "edge"
+    },
     "src/app/api/**/*.ts": {
       "maxDuration": 300
-    },
-    "api/v1beta/[...path].js": {
-      "runtime": "edge",
-      "maxDuration": 30
     }
   }
 }
